@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { resetPassword } from "../../services/AuthServices";
+import "../../assets/styles/ResetPasswordModal.css";
 
 function ResetPasswordModal({ setShowReset }) {
   const [newPassword, setNewPassword] =
@@ -21,30 +22,35 @@ function ResetPasswordModal({ setShowReset }) {
   };
 
   return (
-    <div>
-      <button
-        onClick={() => setShowReset(false)}
-      >
-        X
-      </button>
+    <div className="modal-overlay">
+      <div className="reset-modal">
 
-      <h2>Reset Password</h2>
+        <button
+          className="close-btn"
+          onClick={() => setShowReset(false)}
+        >
+          ✕
+        </button>
 
-      <input
-        type="password"
-        placeholder="New Password"
-        value={newPassword}
-        onChange={(e) =>
-          setNewPassword(e.target.value)
-        }
-      />
+        <h2>Reset Password</h2>
 
-      <br />
-      <br />
+        <input
+          type="password"
+          placeholder="Enter New Password"
+          value={newPassword}
+          onChange={(e) =>
+            setNewPassword(e.target.value)
+          }
+        />
 
-      <button onClick={handleResetPassword}>
-        Reset Password
-      </button>
+        <button
+          className="reset-btn"
+          onClick={handleResetPassword}
+        >
+          Reset Password
+        </button>
+
+      </div>
     </div>
   );
 }

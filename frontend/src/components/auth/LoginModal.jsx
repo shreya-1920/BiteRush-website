@@ -55,20 +55,21 @@ function LoginModal({ setShowLogin, setShowReset }) {
       <br />
       <br />
 
-      <button onClick={handleForgotPassword}>Forgot Password?</button>
+  <button onClick={handleForgotPassword}>
+    Forgot Password?
+  </button>
 
-      <br />
-      <br />
+  <br /><br />
 
-      <button
-        onClick={() => {
-          setShowLogin(false);
-          setShowReset(true);
-        }}
-      >
-        Reset Password
-      </button>
-    </div>
+  <button
+    onClick={() => {
+      setShowLogin(false);
+      setShowReset(true);
+    }}
+  >
+    Reset Password
+  </button>
+</div>
   );
 }
 
