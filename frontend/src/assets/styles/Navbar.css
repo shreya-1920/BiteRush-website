@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 80px;
+  background: white;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar-links li {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.login-btn {
+  padding: 10px 20px;
+  border: 1px solid #ff6b35;
+  background: white;
+  color: #ff6b35;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.register-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #ff6b35;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}

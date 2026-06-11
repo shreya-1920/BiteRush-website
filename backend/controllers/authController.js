@@ -23,7 +23,8 @@ const login = (req, res) => {
     res.status(200).json({
         success: true,
         message: "Login Successful",
-        email
+        email,
+        password
     });
 };
 

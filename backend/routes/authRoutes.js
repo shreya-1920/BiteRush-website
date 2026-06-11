@@ -1,27 +1,21 @@
-const express = require ("express");//import express
-const router = express.Router();//creates a mini router for authentication
+const express = require("express");
+const router = express.Router();
 
-//import controllers
 const {
-    register,
-    login,
-    logout,
-    getProfile,
-    forgotPassword,
-    resetPassword
+  register,
+  login,
+  getProfile,
+  logout,
+  forgotPassword,
+  resetPassword,
 } = require("../controllers/authController");
 
-//routes 
+// Auth Routes
 router.post("/register", register);
-
 router.post("/login", login);
-
-router.post("/logout", logout);
-
 router.get("/profile", getProfile);
-
-router.post("/forgot-password",forgotPassword);
-
-router.post("/reset-password",resetPassword);
+router.get("/logout", logout);
+router.post("/forgotpassword", forgotPassword);
+router.post("/resetpassword", resetPassword);
 
 module.exports = router;
