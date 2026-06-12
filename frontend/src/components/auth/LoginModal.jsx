@@ -7,26 +7,60 @@ function LoginModal({ setShowLogin, setShowReset }) {
 
   const handleLogin = async () => {
     try {
-      const response = await loginUser({ email, password });
+      const response = await loginUser({
+        email,
+        password,
+      });
+
+      console.log(response.data);
+
       alert(response.data.message);
+
       setShowLogin(false);
     } catch (error) {
-      alert("Login Failed");
+      console.error(error);
+
+      alert(
+        error.response?.data?.message ||
+        "Login Failed"
+      );
     }
   };
 
   const handleForgotPassword = async () => {
     try {
-      const response = await forgotPassword({ email });
+      const response = await forgotPassword({
+        email,
+      });
+
       alert(response.data.message);
     } catch (error) {
+      console.error(error);
+
       alert("Failed");
     }
   };
 
   return (
-    <div>
-      <button onClick={() => setShowLogin(false)}>X</button>
+    <div
+      style={{
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        background: "#fff",
+        padding: "30px",
+        borderRadius: "12px",
+        boxShadow: "0 0 20px rgba(0,0,0,0.2)",
+        zIndex: 9999,
+        minWidth: "350px",
+      }}
+    >
+      <button
+        onClick={() => setShowLogin(false)}
+      >
+        X
+      </button>
 
       <h2>Login</h2>
 
@@ -34,7 +68,9 @@ function LoginModal({ setShowLogin, setShowReset }) {
         type="email"
         placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) =>
+          setEmail(e.target.value)
+        }
       />
 
       <br />
@@ -44,32 +80,39 @@ function LoginModal({ setShowLogin, setShowReset }) {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) =>
+          setPassword(e.target.value)
+        }
       />
 
       <br />
       <br />
 
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin}>
+        Login
+      </button>
 
       <br />
       <br />
 
-  <button onClick={handleForgotPassword}>
-    Forgot Password?
-  </button>
+      <button
+        onClick={handleForgotPassword}
+      >
+        Forgot Password?
+      </button>
 
-  <br /><br />
+      <br />
+      <br />
 
-  <button
-    onClick={() => {
-      setShowLogin(false);
-      setShowReset(true);
-    }}
-  >
-    Reset Password
-  </button>
-</div>
+      <button
+        onClick={() => {
+          setShowLogin(false);
+          setShowReset(true);
+        }}
+      >
+        Reset Password
+      </button>
+    </div>
   );
 }
 

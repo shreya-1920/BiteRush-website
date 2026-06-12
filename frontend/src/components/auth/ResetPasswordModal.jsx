@@ -3,6 +3,7 @@ import { resetPassword } from "../../services/AuthServices";
 import "../../assets/styles/ResetPasswordModal.css";
 
 function ResetPasswordModal({ setShowReset }) {
+  const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] =
     useState("");
 
@@ -10,6 +11,7 @@ function ResetPasswordModal({ setShowReset }) {
     try {
       const response =
         await resetPassword({
+          email,
           newPassword,
         });
 
@@ -17,7 +19,12 @@ function ResetPasswordModal({ setShowReset }) {
 
       setShowReset(false);
     } catch (error) {
-      alert("Reset Failed");
+      console.log(error);
+
+      alert(
+        error.response?.data?.message ||
+        "Reset Failed"
+      );
     }
   };
 
@@ -33,6 +40,15 @@ function ResetPasswordModal({ setShowReset }) {
         </button>
 
         <h2>Reset Password</h2>
+
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) =>
+            setEmail(e.target.value)
+          }
+        />
 
         <input
           type="password"

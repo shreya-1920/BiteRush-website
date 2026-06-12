@@ -1,34 +1,67 @@
 import "../../assets/styles/Hero.css";
 
+
+
 function Hero() {
   return (
     <section className="hero">
-      <div className="hero-left">
+      <div className="overlay"></div>
+
+      <div className="hero-content">
+
+        <span className="hero-badge">
+          🍔 Fast • Fresh • Delivered
+        </span>
+
         <h1>
-          Every Bite,
+          Discover Great Food,
           <br />
-          Worth The Rush
+          Delivered Faster.
         </h1>
 
         <p>
-          Discover the best restaurants near you
-          and get your favorite meals delivered
-          quickly.
+          Explore top-rated restaurants, trending dishes,
+          and exclusive offers from the best restaurants
+          near you—all delivered fresh to your doorstep.
         </p>
 
+        {/* Search Bar */}
+
+        <div className="hero-search">
+
+          <input
+            type="text"
+            placeholder="Search restaurants, dishes, cuisines..."
+          />
+
+          <input
+            type="text"
+            placeholder="Enter your location"
+          />
+
+          <button>
+            Search
+          </button>
+
+        </div>
+
+        {/* Buttons */}
+
         <div className="hero-buttons">
-          <button className="order-btn">
+
+          <button className="primary-btn">
             Order Now
           </button>
 
-          <button className="explore-btn">
+          <button className="secondary-btn">
             Explore Restaurants
           </button>
-        </div>
-      </div>
 
-      <div className="hero-right">
-        🍕 🍔 🍟
+        </div>
+
+       
+      
+
       </div>
     </section>
   );

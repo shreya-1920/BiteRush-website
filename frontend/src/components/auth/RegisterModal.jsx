@@ -9,10 +9,10 @@ function RegisterModal({ setShowRegister }) {
   const handleRegister = async () => {
     try {
       const response = await registerUser({
-        username,
-        email,
-        password,
-      });
+  name: username,
+  email,
+  password,
+});
 
       console.log(response.data);
 

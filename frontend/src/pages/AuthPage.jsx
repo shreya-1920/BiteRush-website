@@ -4,6 +4,7 @@ import {
   registerUser,
   forgotPassword,
 } from "../services/AuthServices";
+import { useNavigate } from "react-router-dom";
 
 import ResetPasswordModal from "../components/auth/ResetPasswordModal";
 import "../assets/styles/auth.css";
@@ -17,26 +18,40 @@ function AuthPage() {
   const [confirmPassword, setConfirmPassword] =
     useState("");
   const [showReset, setShowReset] = useState(false);  
+  const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    try {
-      console.log("Login Clicked");
+const handleLogin = async () => {
+  try {
+    const response = await loginUser({
+      email,
+      password,
+    });
 
-      const response = await loginUser({
-        email,
-        password,
-      });
+    console.log(response.data);
 
-      console.log(response.data);
+    localStorage.setItem(
+      "token",
+      response.data.token
+    );
 
-      alert(response.data.message);
-    } catch (error) {
-      console.error(error);
+    localStorage.setItem(
+      "user",
+      JSON.stringify(response.data.user)
+    );
 
-      alert("Login Failed");
-    }
-  };
+    alert(response.data.message);
 
+    navigate("/");
+
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      error.response?.data?.message ||
+      "Login Failed"
+    );
+  }
+};
   const handleRegister = async () => {
     if (password !== confirmPassword) {
       alert("Passwords do not match");
@@ -47,10 +62,10 @@ function AuthPage() {
       console.log("Register Clicked");
 
       const response = await registerUser({
-        username,
-        email,
-        password,
-      });
+  name: username,
+  email,
+  password,
+});
 
       console.log(response.data);
 
