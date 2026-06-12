@@ -1,4 +1,3 @@
-import "../../assets/styles/Navbar.css";
 import { FaShoppingBasket } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";

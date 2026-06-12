@@ -1,5 +1,3 @@
-import "../../assets/styles/StatsCounter.css";
-
 function StatsCounter() {
   return (
     <section className="stats">

@@ -1,5 +1,3 @@
-import "../../assets/styles/Categories.css";
-
 function Categories() {
 
   const categories = [

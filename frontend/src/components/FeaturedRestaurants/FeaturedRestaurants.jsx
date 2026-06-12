@@ -1,5 +1,3 @@
-import "../../assets/styles/FeaturedRestaurants.css";
-
 function FeaturedRestaurants() {
   const restaurants = [
     {

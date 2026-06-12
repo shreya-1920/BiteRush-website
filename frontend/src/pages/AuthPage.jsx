@@ -7,7 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import ResetPasswordModal from "../components/auth/ResetPasswordModal";
-import "../assets/styles/auth.css";
+
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(false);

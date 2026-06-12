@@ -1,4 +1,3 @@
-import "../../assets/styles/HowItWorks.css";
 import {
   FaStore,
   FaHamburger,

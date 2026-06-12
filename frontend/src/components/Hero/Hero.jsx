@@ -1,6 +1,4 @@
-import "../../assets/styles/Hero.css";
-
-
+import clouds from "../../assets/images/clouds png.webp";
 
 function Hero() {
   return (
@@ -8,7 +6,6 @@ function Hero() {
       <div className="overlay"></div>
 
       <div className="hero-content">
-
         <span className="hero-badge">
           🍔 Fast • Fresh • Delivered
         </span>
@@ -25,10 +22,7 @@ function Hero() {
           near you—all delivered fresh to your doorstep.
         </p>
 
-        {/* Search Bar */}
-
         <div className="hero-search">
-
           <input
             type="text"
             placeholder="Search restaurants, dishes, cuisines..."
@@ -42,13 +36,9 @@ function Hero() {
           <button>
             Search
           </button>
-
         </div>
 
-        {/* Buttons */}
-
         <div className="hero-buttons">
-
           <button className="primary-btn">
             Order Now
           </button>
@@ -56,12 +46,12 @@ function Hero() {
           <button className="secondary-btn">
             Explore Restaurants
           </button>
-
         </div>
+      </div>
 
-       
-      
-
+      {/* CLOUD DIVIDER */}
+      <div className="hero-clouds">
+        <img src={clouds} alt="cloud divider" />
       </div>
     </section>
   );

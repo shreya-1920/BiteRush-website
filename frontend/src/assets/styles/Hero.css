@@ -2,12 +2,12 @@
   position: relative;
   min-height: 100vh;
 
- background: linear-gradient(
-  135deg,
-  #4a1f0f,
-  #6b2f17,
-  #8b4513
-);
+  background: linear-gradient(
+    135deg,
+    #4a1f0f,
+    #6b2f17,
+    #8b4513
+  );
 
   display: flex;
   align-items: center;
@@ -17,6 +17,8 @@
   color: white;
 
   overflow: hidden;
+
+  padding-bottom: 120px;
 }
 
 .overlay {
@@ -28,7 +30,7 @@
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 5;
 
   width: 90%;
   max-width: 1200px;
@@ -146,28 +148,21 @@
   cursor: pointer;
 }
 
-.hero-stats {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+/* CLOUD DIVIDER */
 
-  background: white;
-  border-radius: 20px;
-
-  padding: 40px;
-
-  margin-top: 60px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
-}
-.stat {
-  text-align: center;
+.hero-clouds {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  line-height: 0;
 }
 
-.stat p {
-  color: #444;
-  margin-top: 10px;
+.hero-clouds img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @keyframes fadeUp {
