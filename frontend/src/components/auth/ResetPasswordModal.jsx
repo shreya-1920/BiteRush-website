@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { resetPassword } from "../../services/AuthServices";
-import "../../assets/styles/ResetPasswordModal.css";
+
 
 function ResetPasswordModal({ setShowReset }) {
   const [email, setEmail] = useState("");
